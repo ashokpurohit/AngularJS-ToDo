@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid" ng-app="myTodoApp" ng-controller="myTodoCtrl">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 mt-5 text-white text-center">
+                    <h1>todo in angularjs</h1>
+                    <div class="row justify-content-center">
+                        <input type="text" name="todo" id="todo" placeholder="What needs to be done?" ng-model='enterToDo'>
+                        <button type="submit" class="ml-3" ng-click = 'addTodo()'>Add</button>
+                    </div>
+                    <ul class="todo-list justify-content-unset">
+                        <li class="item d-flex" ng-repeat = 'todo in todoList' ng-show = "!todo.trash">
+                            <i class="fa" ng-class = "{'fa-square-o' : !todo.done, 'fa-check-square' : todo.done}" ng-click ="completeToDo(todo)" job="complete"></i>
+                            <p class="text" ng-class = "{'lineThrough' : todo.done}">{{todo.task}}</p>
+                            <i class="fa fa-star" ng-show = "!todo.done" ng-class = "{'bookmark' : todo.star}" ng-click = "bookmarkToDo(todo)" job="star"></i>
+                            <i class="fa fa-trash-o" ng-show = "todo.done" ng-disable="deleteToDo" ng-click = "deleteToDo(todo)" job="delete"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

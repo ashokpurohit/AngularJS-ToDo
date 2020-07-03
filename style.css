@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #363a45;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    overflow: scroll;
+
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* make scrollbar transparent */
+}
+form{
+
+}
+input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #a9a9a9;
+    color: #a9a9a9;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 10px;
+    position: relative;
+    width: 80%;
+}
+
+button[type=submit] {
+    background-color: #679e63;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 #50894a;
+    color: white;
+    display: grid;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 10px 20px;
+    position: relative;
+}
+button:focus {
+    outline: none;
+}
+ul.todo-list{
+    padding:0;
+    margin:20px 0;    
+    background-color: whitesmoke;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.5), 0 25px 50px 0 rgba(255, 255, 255, 0.1);
+
+}
+
+.item{
+    width:100%;
+    height: 60px;
+    min-height: 60px;
+    position: relative;    
+    font-size: 1.2rem;
+    color:black;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 20px;
+    margin: 0;
+}
+.item p.text {
+    position: relative;
+    padding: 5px;
+    margin: 0;
+    left: 10px;
+    overflow: hidden;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+    color : #ccc;
+}
+
+.item i.fa:before{
+    cursor: pointer;
+}
+.fa-square-o, .fa-check-square{
+    position: relative;
+    padding: 10px 0;
+
+}
+.fa-check-square {
+    color: #6eb200;
+}
+.fa-square-o:before {
+    color: #ceccdf;
+}   
+.fa-star, .fa-trash-o{
+    position: absolute;
+    right: 0;
+    padding: 10px 20px;
+}
+.fa-star:before {
+    color: #ceccdf;
+}
+.bookmark:before {
+    color: orange;
+}
+.item i.fa-trash-o:hover{
+    color:#af0000;
+    cursor: pointer;
+}
